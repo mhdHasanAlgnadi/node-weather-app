@@ -10,7 +10,7 @@ const forecast = (lat,long,callback) => {
         } else if (body.error){
             callback('error code '+body.code+' : '+body.error,undefined)
         } else {
-            callback(undefined,body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. There is a ' + body.currently.precipProbability + '% chance of rane')
+            callback(undefined,body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degress out. The low temprature in the day is '+ body.daily.data[0].temperatureLow +' and the height is '+body.daily.data[0].temperatureHigh+'. There is a ' + body.currently.precipProbability + '% chance of rane')
         }
     })
     
